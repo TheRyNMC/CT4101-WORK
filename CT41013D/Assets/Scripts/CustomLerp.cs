@@ -5,6 +5,14 @@ using UnityEngine;
 public class CustomLerp : MonoBehaviour {
     float z;
     public float startZ, endZ;
+    public float duration = 1;
+    public enum eases
+    {
+        easein, easeout
+    }
+
+    public eases myEase;
+
     private void Start()
     {
         z = startZ;
@@ -19,10 +27,10 @@ public class CustomLerp : MonoBehaviour {
     IEnumerator LerpFLoat()
     {
         float time = 0;
-        while (time < 1)
+        while (time < duration)
         {
             // t = easing fucntion
-            float t = Mathf.Pow(time, 3);
+            float t = Mathf.Pow(time, 3)/ duration;
             //lerp float = start + (end - start) * interpolator;
             z = startZ + (endZ - startZ) * t;
             time += Time.deltaTime;
