@@ -5,6 +5,10 @@ using UnityEngine;
 public class CustomLerp : MonoBehaviour {
     float z;
 
+    public void LerpReset() {
+        GetComponent<TrailRenderer>().Clear();
+    }
+
     public void LerpButton(){
         StartCoroutine(LerpFLoat());
     }
@@ -18,6 +22,10 @@ public class CustomLerp : MonoBehaviour {
             time += Time.deltaTime;
             yield return null;
         }
+    }
+
+    public void LerpReset() {
+        GetComponent<TrailRenderer>().Clear();
     }
 
     private void Update(){

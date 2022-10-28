@@ -214,8 +214,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12058567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 5}
-  m_LocalScale: {x: 1.1, y: 1, z: 1.1}
+  m_LocalPosition: {x: 2.5, y: 0, z: 2.5}
+  m_LocalScale: {x: 0.643522, y: 1, z: 0.671803}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startZ: 0
   endZ: 5
-  duration: 6
+  duration: 1
   myEase: 0
 --- !u!65 &324681142
 BoxCollider:
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324681140}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 554c0faf0536ccf45a4667b31096352c, type: 3}
   m_Name: 
@@ -753,8 +753,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.68688655, y: -0.0006496921, z: 0.00061353075, w: -0.72676414}
-  m_LocalPosition: {x: 4.9825244, y: 16.055843, z: 5.730882}
+  m_LocalRotation: {x: -0.7009275, y: -0.0023409738, z: 0.0023217453, w: -0.7132249}
+  m_LocalPosition: {x: 2.609239, y: 10.565354, z: 2.5756419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1015,9 +1015,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 324681147}
+      - m_Target: {fileID: 324681140}
         m_TargetAssemblyTypeName: SimpleLerp, Assembly-CSharp
-        m_MethodName: LerpReset
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
