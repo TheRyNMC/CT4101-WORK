@@ -43,36 +43,29 @@ public class Easings
             if ((t *= 2f) < 1f) return 0.5f * (1f - Mathf.Cos(t * Mathf.PI * 0.5f));
             return -0.5f * Mathf.Sin(t * Mathf.PI * 0.5f);
         }
+    }
 
-
+    public class Elastic {
         public static float EaseInElastic(float t) {
             if (t == 0) {
-                return 0;
-            } 
-            else if (t == 1) {
+                 return 0;
+            } else if (t == 1) {
                 return 1;
-            } 
-            else {
+            } else {
                 return -Mathf.Pow(2, 10 * t - 10) * Mathf.Sin((t * 10f - 10.75f) * c4);
             }
         }
 
         public static float EaseOutElastic(float t) {
-                if (t == 0) {
+            if (t == 0) {
                 return 0;
-                }
-                else if (t == 1) {
+            } else if (t == 1) {
                 return 1;
-                }
-                else {
+            } else {
                 return Mathf.Pow(2, -10 * t) * Mathf.Sin((t * 10f - 0.75f) * c4) + 1;
-                }
             }
-    
-    
-    
-    
+        }
     }
-
 }
+
 

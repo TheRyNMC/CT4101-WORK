@@ -29,6 +29,7 @@ public class MoveObject : MonoBehaviour
         }
     }
 
+
     // Update is called once per frame
     void Update(){
         transform.localScale = Vector3.one * Mathf.Lerp(1, growth, t);
