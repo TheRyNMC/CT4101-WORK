@@ -6,6 +6,9 @@ using TMPro;
 public class ClickInteract : MonoBehaviour {
     [SerializeField] private CanvasGroup panel;
     private TextMeshProUGUI objectText;
+    public string theLerp;
+    private bool Lerping;
+
 
     private void Start() {
         if (panel != null) {
@@ -16,21 +19,22 @@ public class ClickInteract : MonoBehaviour {
 
 
     void Update() {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit)) {
-            Debug.DrawLine(ray.origin, hit.point, Color.blue);
-        }
-        if (Physics.Raycast(ray, out hit)) {
-            Debug.DrawLine(ray.origin, hit.point, Color.red);
-            if (hit.transform.TryGetComponent(out MoveObject mo)) {
-                mo.startLerp();
-                StartCoroutine(RevealPanel());
-                //objectText.text = "Name : " + hit.transform.name + " \n Easing = " + mo.e + " \n Returns? = " + (mo.b == true ? "True" : "False"); // mo.e and mo.b are placeholders for info of the ease and return
+        if (Input.GetKeyDown(KeyCode.Mouse0)){ 
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit)) {
+                Debug.DrawLine(ray.origin, hit.point, Color.blue);
+                if (hit.transform.TryGetComponent(out MoveObject mo)) {
+                    mo.startLerp();
+                    StartCoroutine(RevealPanel());
+                    theLerp = hit.transform.GetComponentInParent<MoveObject>().whichLerp;
+                    Lerping = hit.transform.GetComponentInParent<MoveObject>().isLerping;
+                    objectText.text = "Name : " + hit.transform.name + " \n Easing = "  + theLerp+ " \n Returns? = " + (Lerping == true ? "True" : "False"); // mo.e and mo.b are placeholders for info of the ease and return
+                }
+            } 
+            else {
+                StartCoroutine(HidePanel());
             }
-        } 
-        else {
-            StartCoroutine(HidePanel());
         }
     }
     private IEnumerator RevealPanel() {

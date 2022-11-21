@@ -10,10 +10,11 @@ public class MoveObject : MonoBehaviour
     private float growth = 1f;
 
     private float t;
-    [SerializeField]
-    private Slider slider;
+    //[SerializeField]
+    // private Slider slider;
 
-
+    [SerializeField] public string whichLerp;
+    [SerializeField] public bool isLerping;
 
     //Function to call lerp from button
     public void startLerp() {
@@ -35,7 +36,8 @@ public class MoveObject : MonoBehaviour
         transform.localScale = Vector3.one * Mathf.Lerp(1, growth, t);
         float rotation = Mathf.InverseLerp(0, 1, t) * 360f;
         transform.localEulerAngles = new Vector3(0f, 0f, rotation);
-        slider.value = Mathf.InverseLerp(0, 1, t);
+        //slider.value = Mathf.InverseLerp(0, 1, t);
+
     }
 
 
