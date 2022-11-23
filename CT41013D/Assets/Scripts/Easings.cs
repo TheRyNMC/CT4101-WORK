@@ -111,6 +111,24 @@ public class Easings {
             }
         }
     }
+
+    public class Cubic {
+        public static float easeInCubic(float t) {
+            return t * t * t;
+        }
+        public static float easeOutCubic(float t) {
+            return 1 - Mathf.Pow(1 - t, 3);
+        }
+        public static float easeInOutCubic(float t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Mathf.Pow(-2 * t + 2, 3) / 2;
+        }
+    }
+
+    public class Quart {
+        public static float easeInQuart(float t) {
+            
+        }
+    }
 }
 
 
