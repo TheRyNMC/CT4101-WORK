@@ -29,7 +29,7 @@ public class ClickInteract : MonoBehaviour {
                     StartCoroutine(RevealPanel());
                     theLerp = hit.transform.GetComponentInParent<MoveObject>().whichLerp;
                     Lerping = hit.transform.GetComponentInParent<MoveObject>().isLerping;
-                    objectText.text = "Name : " + hit.transform.name + " \n Easing = "  + theLerp+ " \n Returns? = " + (Lerping == true ? "True" : "False"); // mo.e and mo.b are placeholders for info of the ease and return
+                    objectText.text = "Name : " + hit.transform.name + " \n Easing = "  + theLerp+ " \n Returns? = " + (Lerping == true ? "True" : "False"); 
                 }
             } 
             else {
