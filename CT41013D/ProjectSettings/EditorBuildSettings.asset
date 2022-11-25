@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Cubeeee.unity
+    guid: 52a0da5582e543849a3977b50c926d36
+  - enabled: 1
+    path: Assets/Scenes/Move.unity
+    guid: bc1466e3ca13f774883698d6f49e9c73
   m_configObjects: {}
