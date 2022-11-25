@@ -55,9 +55,11 @@ public class Easings {
         public static float EaseInElastic(float t) {
             if (t == 0) {
                 return 0;
-            } else if (t == 1) {
+            } 
+            else if (t == 1) {
                 return 1;
-            } else {
+            } 
+            else {
                 return -Mathf.Pow(2, 10 * t - 10) * Mathf.Sin((t * 10f - 10.75f) * c4);
             }
         }
