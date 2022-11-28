@@ -9,9 +9,8 @@ public class MoveObject : MonoBehaviour {
     [SerializeField]
     private float growth = 1f;
 
-    private float t;
-    //[SerializeField]
-    // private Slider slider;
+    [SerializeField] private float t;
+    [SerializeField] private Slider slider;
 
     [SerializeField] public string whichLerp;
     [SerializeField] public bool isLerping;
@@ -133,6 +132,7 @@ public class MoveObject : MonoBehaviour {
     // Update is called once per frame
     private void Update() {
         transform.position = Vector3.right * Mathf.Lerp(0, growth, t);
+        slider.value = Mathf.InverseLerp(0, 1, t);
     }
 }
 
