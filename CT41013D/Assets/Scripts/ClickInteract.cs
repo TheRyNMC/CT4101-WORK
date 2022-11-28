@@ -31,6 +31,13 @@ public class ClickInteract : MonoBehaviour {
                     Lerping = hit.transform.GetComponentInParent<MoveObject>().isLerping;
                     objectText.text = "Name : " + hit.transform.name + " \n Easing = "  + theLerp+ " \n Returns? = " + (Lerping == true ? "True" : "False"); 
                 }
+                else if (hit.transform.TryGetComponent(out SphereMoveObject o)) {
+                    o.startLerp();
+                    StartCoroutine(RevealPanel());
+                    theLerp = hit.transform.GetComponentInParent<SphereMoveObject>().whichLerp;
+                    Lerping = hit.transform.GetComponentInParent<SphereMoveObject>().isLerping;
+                    objectText.text = "Name : " + hit.transform.name + " \n Easing = " + theLerp + " \n Returns? = " + (Lerping == true ? "True" : "False");
+                }
             } 
             else {
                 StartCoroutine(HidePanel());

@@ -177,13 +177,13 @@ public class Easings {
     }
 
     public class Circ {
-        public static float easeInCirc(float t) {
+        public static float EaseInCirc(float t) {
             return 1 - Mathf.Sqrt(1 - Mathf.Pow(t, 2));
         }
-        public static float easeOutCirc(float t) {
+        public static float EaseOutCirc(float t) {
             return 1 - Mathf.Sqrt(1 - Mathf.Pow(t, 2));
         }
-        public static float easeInOutCirc(float t) {
+        public static float EaseInOutCirc(float t) {
             if (t < 0.5f) {
                 return (1 - Mathf.Sqrt(1 - Mathf.Pow(2 * t, 2))) / 2;
             } 

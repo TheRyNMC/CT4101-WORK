@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class MoveObject : MonoBehaviour {
+public class SphereMoveObject : MonoBehaviour {
 
     [SerializeField]
     private float growth = 1f;
@@ -163,8 +163,7 @@ public class MoveObject : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
-        transform.position = Vector3.right * Mathf.Lerp(0, growth, t);
+        transform.position = Vector3.right * Mathf.Lerp(15, growth, t);
         slider.value = Mathf.InverseLerp(0, 1, t);
     }
 }
-
